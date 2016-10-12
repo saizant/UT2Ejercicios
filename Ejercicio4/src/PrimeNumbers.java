@@ -22,6 +22,16 @@ public class PrimeNumbers {
 			if (isPrime(num)) {
 				primes.add(new Integer(num));
 			}
+			
+			if (Thread.currentThread().isInterrupted()) {
+				return primes;
+			} else {
+				if (isPrime(num)) {
+					primes.add(new Integer(num));
+				}
+				
+			}
+			
 		}
 		
 		return primes;
